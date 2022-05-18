@@ -221,6 +221,50 @@ namespace csharp_snacks_2
                 Console.WriteLine(s);
             }
 
+            Console.WriteLine();
+            Console.WriteLine("---------------");
+
+            //oppure
+
+            lcoppie.ForEach(n => Console.WriteLine(n));
+
+            Console.WriteLine();
+            Console.WriteLine("---------------");
+
+            //oppure
+
+            Console.WriteLine(String.Join("\n", lcoppie));
+
+            Console.WriteLine();
+            Console.WriteLine("---------------");
+
+
+            //ordiniamo ora per il secondo elemento della tupla
+
+            lcoppie.Sort((t1, t2) => t1.Item2.CompareTo(t2.Item2));
+
+
+            List<Tuple<int, int, int>> lcoppie1 = new List<Tuple<int, int, int>>()
+            {
+                    new Tuple<int, int, int>(1, 2, 3),
+                    new Tuple<int, int, int>(4, 8, 32),
+                    new Tuple<int, int, int>(5, 3, 12),
+                    new Tuple<int, int, int>(6, 7, 65),
+                    new Tuple<int, int, int>(42, 12, 11),
+                    new Tuple<int, int, int>(42, 85, 31),
+            };
+
+
+            lcoppie1.Sort();
+            Console.WriteLine(String.Join("n", lcoppie1));
+
+
+
+            //calcolo del tempo attuale in millionesimi di secondo
+
+            //double microseconds = DateTime.Now.Ticks / (TimeSpan.TicksPerMillisecond / 1000.0);
+            //Console.WriteLine("microseconds: {0}", microseconds);
+
 
         }
 
